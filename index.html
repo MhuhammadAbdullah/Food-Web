@@ -14,28 +14,72 @@
   <header class="header-section">
     <nav class="nav-bar">
       <div class="left-section">
-        <button><i class="fa-solid fa-location-crosshairs" style="color: #ffffff;"></i>Location</button>
-        <button><i class="fa-solid fa-phone" style="color: #ffffff;"></i>03123456789</button>
-        <button>Submit Your Complaint</button>
+        <!-- Location Button -->
+        <button class="red-button" onclick="showLocationPopup()">
+          <i class="fa-solid fa-location-crosshairs"></i> Location
+        </button>
+
+        <!-- Phone Button -->
+        <a href="tel:03123456789">
+          <button class="red-button">
+            <i class="fa-solid fa-phone"></i> 03123456789
+          </button>
+        </a>
+
+        <!-- Submit Complaint Button -->
+        <a href="./complaint-form/complaint.html">
+          <button class="red-button">Submit Your Complaint</button>
+        </a>
       </div>
 
+      <!-- Center Section for Logo -->
       <div class="center-section">
         <a href="#" class="logo">
           <img src="assets/1632131605-logo.webp" alt="Logo">
         </a>
-
       </div>
 
       <div class="right-section">
         <div class="icon">
-          <i class="fa-solid fa-cart-shopping" style="color: #e10505;"></i>
+          <a href="cart-page/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         <div class="icon">
-          <i class="fa-solid fa-bars" style="color: #e10505;"></i>
+          <i class="fa-solid fa-bars"></i>
         </div>
       </div>
     </nav>
   </header>
+
+  <!-- Location Popup Modal -->
+  <div id="location-popup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+      <img src="assets/1632131605-logo.webp" alt="Logo" class="popup-logo">
+      <h2>Please Select Your Area</h2>
+      <div class="delivery-pickup-buttons">
+        <button class="delivery active">Delivery</button>
+        <button class="pickup">Pickup</button>
+      </div>
+      <div class="location-options">
+        <div class="location-card active">
+          <img src="assets/Karachi-Mazar-E-Quaid.png" alt="Karachi">
+          <p>Karachi</p>
+        </div>
+      </div>
+      <div class="location-area-selector">
+        <select id="location-selector">
+          <option value="" disabled selected>Please Select Your Area</option>
+          <option value="defence">Defence</option>
+          <option value="clifton">Clifton</option>
+          <option value="gulshan">Gulshan-e-Iqbal</option>
+          <option value="nazimabad">Nazimabad</option>
+          <option value="saddar">Saddar</option>
+        </select>
+        <button class="confirm-button" onclick="closePopup()">Select</button>
+      </div>
+    </div>
+  </div>
+
+
 
 
   <!-- ==============banner=========== -->
@@ -52,9 +96,10 @@
   <!-- ==============category=========== -->
   <nav class="categories-nav">
     <div class="categories-scroll">
-      <a href="#" class="category-link">Biryani</a>
-      <a href="#" class="category-link">Karahi</a>
-      <a href="#" class="category-link">BBQ</a>
+      <a href="#popular-items" class="category-link">Popular Items</a>
+      <a href="#biryani-section" class="category-link">Biryani</a>
+      <a href="#karahi-section" class="category-link">Karahi</a>
+      <a href="#bbq-section" class="category-link">BBQ</a>
       <a href="#" class="category-link">Chinese</a>
       <a href="#" class="category-link">Desi</a>
       <a href="#" class="category-link">Fast Food</a>
@@ -68,7 +113,7 @@
     <i class="fa-solid fa-magnifying-glass search-icon"></i>
   </div>
   <!-- =============deal cards============ -->
-  <div class="popular-items">
+  <div class="popular-items" id="popular-items">
     <div class="section-heading">
 
       <h2><i class="fa-solid fa-fire-flame-curved" style="color: #FFD43B; font-size: 24px;"></i>&nbsp;&nbsp;Popular
@@ -78,138 +123,175 @@
     <div class="cards-container">
       <div class="card">
         <img src="https://via.placeholder.com/150" alt="Item 1">
-        <h3>Item 1</h3>
+        <h3>Deal 1</h3>
         <p>Delicious and trending!</p>
       </div>
       <div class="card">
         <img src="https://via.placeholder.com/150" alt="Item 2">
-        <h3>Item 2</h3>
+        <h3>Deal 2</h3>
         <p>Popular among foodies.</p>
       </div>
       <div class="card">
         <img src="https://via.placeholder.com/150" alt="Item 3">
-        <h3>Item 3</h3>
+        <h3>Deal 3</h3>
         <p>Highly ordered today.</p>
       </div>
       <div class="card">
         <img src="https://via.placeholder.com/150" alt="Item 4">
-        <h3>Item 4</h3>
+        <h3>Deal 4</h3>
         <p>A crowd favorite!</p>
       </div>
     </div>
   </div>
-  <!-- =============product card 1============ -->
-  <div class="banner">
-    <img src="assets/category-banner.webp" alt="Special Offer Banner">
-  </div>
 
-  <div class="product-section">
-    <div class="cards-container">
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 1">
-        <h3>Product 1</h3>
-        <p>Best seller in category.</p>
-        <span class="price">Rs. 425</span>
-        <button class="add-to-cart">+</button>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 2">
-        <h3>Product 2</h3>
-        <p>Highly recommended.</p>
-        <span class="price">Rs. 495</span>
-        <button class="add-to-cart">+</button>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 3">
-        <h3>Product 3</h3>
-        <p>Top-rated product.</p>
-        <span class="price">Rs. 650</span>
-        <button class="add-to-cart">+</button>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 4">
-        <h3>Product 4</h3>
-        <p>Customer favorite.</p>
-        <span class="price">Rs. 425</span>
-        <button class="add-to-cart">+</button>
+
+
+  <!-- =============product card 1============ -->
+  <div id="biryani-section">
+    <div class="banner">
+      <img src="assets/category-banner.webp" alt="Special Offer Banner">
+    </div>
+
+    <div class="product-section">
+      <div class="cards-container">
+        <div class="card" data-id="1" data-name="Product 1" data-price="425" data-img="https://via.placeholder.com/150">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <h3>Product 1</h3>
+          <p>Best seller in category.</p>
+          <span class="price">Rs. 425</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Product 2">
+          <h3>Product 2</h3>
+          <p>Highly recommended.</p>
+          <span class="price">Rs. 495</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Product 3">
+          <h3>Product 3</h3>
+          <p>Top-rated product.</p>
+          <span class="price">Rs. 650</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Product 4">
+          <h3>Product 4</h3>
+          <p>Customer favorite.</p>
+          <span class="price">Rs. 425</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
       </div>
     </div>
   </div>
-
   <!-- =============product card 2============ -->
-  <div class="banner">
-    <img src="assets/category-banner.webp" alt="Special Offer Banner">
-  </div>
+  <div id="karahi-section">
+    <div class="banner">
+      <img src="assets/category-banner.webp" alt="Special Offer Banner">
+    </div>
 
-  <div class="product-section">
-    <div class="cards-container">
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 1">
-        <h3>Product 1</h3>
-        <p>Best seller in category.</p>
-        <span class="price">Rs. 425</span>
-        <button class="add-to-cart">+</button>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 2">
-        <h3>Product 2</h3>
-        <p>Highly recommended.</p>
-        <span class="price">Rs. 495</span>
-        <button class="add-to-cart">+</button>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 3">
-        <h3>Product 3</h3>
-        <p>Top-rated product.</p>
-        <span class="price">Rs. 650</span>
-        <button class="add-to-cart">+</button>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 4">
-        <h3>Product 4</h3>
-        <p>Customer favorite.</p>
-        <span class="price">Rs. 425</span>
-        <button class="add-to-cart">+</button>
+    <div class="product-section">
+      <div class="cards-container">
+        <div class="card" data-id="1" data-name="Product 1" data-price="425" data-img="https://via.placeholder.com/150">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <h3>Product 1</h3>
+          <p>Best seller in category.</p>
+          <span class="price">Rs. 425</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Product 2">
+          <h3>Product 2</h3>
+          <p>Highly recommended.</p>
+          <span class="price">Rs. 495</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Product 3">
+          <h3>Product 3</h3>
+          <p>Top-rated product.</p>
+          <span class="price">Rs. 650</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Product 4">
+          <h3>Product 4</h3>
+          <p>Customer favorite.</p>
+          <span class="price">Rs. 425</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
       </div>
     </div>
   </div>
   <!-- =============product card 3============ -->
-  <div class="banner">
-    <img src="assets/category-banner.webp" alt="Special Offer Banner">
-  </div>
+  <div id="bbq-section">
+    <div class="banner">
+      <img src="assets/category-banner.webp" alt="Special Offer Banner">
+    </div>
 
-  <div class="product-section">
-    <div class="cards-container">
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 1">
-        <h3>Product 1</h3>
-        <p>Best seller in category.</p>
-        <span class="price">Rs. 425</span>
-        <button class="add-to-cart">+</button>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 2">
-        <h3>Product 2</h3>
-        <p>Highly recommended.</p>
-        <span class="price">Rs. 495</span>
-        <button class="add-to-cart">+</button>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 3">
-        <h3>Product 3</h3>
-        <p>Top-rated product.</p>
-        <span class="price">Rs. 650</span>
-        <button class="add-to-cart">+</button>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Product 4">
-        <h3>Product 4</h3>
-        <p>Customer favorite.</p>
-        <span class="price">Rs. 425</span>
-        <button class="add-to-cart">+</button>
+    <div class="product-section">
+      <div class="cards-container">
+        <div class="card" data-id="1" data-name="Product 1" data-price="425" data-img="https://via.placeholder.com/150">
+          <img src="https://via.placeholder.com/150" alt="Product 1">
+          <h3>Product 1</h3>
+          <p>Best seller in category.</p>
+          <span class="price">Rs. 425</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Product 2">
+          <h3>Product 2</h3>
+          <p>Highly recommended.</p>
+          <span class="price">Rs. 495</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Product 3">
+          <h3>Product 3</h3>
+          <p>Top-rated product.</p>
+          <span class="price">Rs. 650</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="Product 4">
+          <h3>Product 4</h3>
+          <p>Customer favorite.</p>
+          <span class="price">Rs. 425</span>
+          <button class="add-to-cart"><i class="fa-solid fa-plus"></i></button>
+        </div>
       </div>
     </div>
   </div>
+  <!-- ===============Popup Modal For Cart=========== -->
+  <div class="cart-popup-overlay" id="popup">
+    <div class="cart-popup-content">
+      <!-- Left Section -->
+      <div class="cart-popup-left">
+        <img src="https://via.placeholder.com/450x300" alt="Product Image" id="product-image">
+      </div>
+      <!-- Right Section -->
+      <div class="cart-popup-right">
+        <h2 id="product-name">Finger Fish</h2>
+        <span class="price" id="product-price">Rs. 1395</span>
+        <p id="product-desc">Boneless fish fillet crumb coated and deep fried to perfection. Served with fries and
+          Tartar sauce.</p>
+        <textarea placeholder="Enter instructions about this item" id="order-instructions"></textarea>
+        <div class="quantity-section">
+          <button id="decrease-btn"><i class="fa-solid fa-minus" style="color: #ffffff;"></i></button>
+          <span id="quantity">1</span>
+          <button id="increase-btn"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+        </div>
+        <button class="add-to-cart" id="add-to-cart">Add to Cart</button>
+      </div>
+      <!-- Close Button -->
+      <button class="close-btn" onclick="closePopup()"><i class="fa-solid fa-xmark"
+          style="color: #ffffff;"></i></button>
+    </div>
+  </div>
+
+
+
   <!-- ===========footer========= -->
   <footer class="footer">
     <div class="footer-container">
@@ -248,16 +330,16 @@
         <h3>Follow Us</h3>
         <div class="social-icons">
           <a href="#" class="facebook" title="Facebook">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook.png" alt="Facebook">
+            <i class="fa-brands fa-square-facebook" style="color: #ffffff;"></i>
           </a>
           <a href="#" class="twitter" title="Twitter">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png" alt="Twitter">
+            <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
           </a>
           <a href="#" class="instagram" title="Instagram">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram">
+            <i class="fa-brands fa-square-instagram" style="color: #ffffff;"></i>
           </a>
-          <a href="#" class="linkedin" title="LinkedIn">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
+          <a href="#" class="instagram" title="Instagram">
+            <i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i>
           </a>
         </div>
       </div>
@@ -269,7 +351,7 @@
     </div>
   </footer>
 
-
+  <script src="script.js"></script>
 </body>
 
 </html>
