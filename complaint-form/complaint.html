@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="complaint.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Complaint Form</h1>
+
+        <!-- Brand Selection -->
+        <div class="brand-selection">
+            <h2>Pick the Brand:</h2>
+            <button class="brand-btn" onclick="showComplaintOptions('gevini-pizza')">Gevini Pizza</button>
+            <button class="brand-btn" onclick="showComplaintOptions('gevini-foods')">Gevini Foods</button>
+        </div>
+
+        <!-- Complaint Type (Initially Hidden) -->
+        <div class="complaint-type" id="complaint-type" style="display: none;">
+            <h2>Complaint Relating To:</h2>
+            <button class="type-btn" onclick="highlightButton(this)">Takeaway</button>
+            <button class="type-btn" onclick="highlightButton(this)">Dine-In</button>
+            <button class="type-btn" onclick="highlightButton(this)">Delivery</button>
+        </div>
+
+        <!-- Complaint Form -->
+        <form action="#" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="customer-name">Customer Name</label>
+                    <input type="text" id="customer-name" name="customer-name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-phone">Customer Phone</label>
+                    <input type="tel" id="customer-phone" name="customer-phone" placeholder="Enter your phone number" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="order-code">Order Code (if available)</label>
+                    <input type="text" id="order-code" name="order-code" placeholder="Order code">
+                </div>
+                <div class="form-group">
+                    <label for="branch">Branch</label>
+                    <input type="text" id="branch" name="branch" placeholder="Enter branch name">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="visit-date">Date of Visit</label>
+                    <input type="date" id="visit-date" name="visit-date">
+                </div>
+                <div class="form-group">
+                    <label for="complaint-desc">Complaint Description</label>
+                    <textarea id="complaint-desc" name="complaint-desc" rows="4" placeholder="Enter your complaint here"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group file-upload-container">
+                <label for="file-upload" class="file-upload-label">
+                    <i class="fa-solid fa-cloud-arrow-up" style="color: #ff0000;"></i> Choose File
+                </label>
+                <input type="file" id="file-upload" name="file-upload" hidden>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="complaint.js"></script>
+</body>
+</html>
